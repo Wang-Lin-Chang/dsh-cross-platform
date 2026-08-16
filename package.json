@@ -1,0 +1,31 @@
+{
+  "name": "dsh-cross-platform",
+  "version": "0.1.0",
+  "description": "Cross-platform backend for dsh-witness/dsh-anchor: Linux sandbox (chattr immutable + bubblewrap read-only view) and process identity utilities. Every claim carries an experiment number.",
+  "type": "module",
+  "main": "src/linux-backend.mjs",
+  "files": [
+    "src/",
+    "test/",
+    "README.md",
+    "LICENSE",
+    "vendor/"
+  ],
+  "scripts": {
+    "test": "node --experimental-strip-types test/witness-final-linux-test.ts"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "linux",
+    "sandbox",
+    "bubblewrap",
+    "chattr",
+    "cross-platform"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.6"
+  }
+}

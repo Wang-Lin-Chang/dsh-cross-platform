@@ -1,0 +1,19 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  linux-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '25.x'
+      - run: sudo apt-get update -y && sudo apt-get install -y bubblewrap attr
+      - run: npm install
+      # chattr +i 需要 CAP_LINUX_IMMUTABLE（实测环境 WSL root）——CI runner 非 root，sudo 对齐实测环境
+      # sudo env 保 PATH：setup-node 的 node 在 runner 用户 PATH，sudo 会重置
+      - run: sudo env "PATH=$PATH" npm test
