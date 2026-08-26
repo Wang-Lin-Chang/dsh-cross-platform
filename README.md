@@ -20,7 +20,7 @@ dsh-witness 的 Windows 沙箱（NTFS ACL 六维闭合）在 Linux 上需要等�
 | 防覆盖 | `chattr +i` + bubblewrap 只读视图 | EXP-1 / EXP-3（带对照组）|
 | 防删 | `chattr +i` + 只读视图 | EXP-1 / EXP-3 |
 | 防伪造（lock/exit.txt）| `chattr +i` | EXP-1 / 冒烟 12/12 |
-| 文件系统隔离 | **bubblewrap 只读视图（EROFS）**——宿主与任务看到两个世界 | EXP-3 |
+| 文件系统隔离 | **bubblewrap 只读视图（EROFS）**——宿主与任务看到两个视图 | EXP-3 |
 | 进程身份（三证据）| `/proc/<pid>/stat` 第 22 字段 + btime | EXP-6 |
 | 退出协议 | `EXIT:<code>`（对齐 Windows）| 冒烟 12/12 |
 | 官方配方 | Node `--experimental-permission` | EXP-2 |
